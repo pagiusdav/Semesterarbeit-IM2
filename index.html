@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Swiss Super League Spieltage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    select {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 10px;
+      font-size: 1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Swiss Super League – Spieltage</h1>
+
+  <select id="spieltagDropdown">
+    <option value="next">Nächster Spieltag</option>
+    <!-- Weitere Spieltage werden per JS eingefügt -->
+  </select>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Datum</th>
+        <th>Zeit</th>
+        <th>Heim</th>
+        <th>Auswärts</th>
+        <th>Stadion</th>
+      </tr>
+    </thead>
+    <tbody id="spieleTabelle"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
