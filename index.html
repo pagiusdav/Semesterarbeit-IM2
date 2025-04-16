@@ -1,61 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Swiss Super League Spieltage</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f4f4f4;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    select {
-      display: block;
-      margin: 0 auto 20px;
-      padding: 10px;
-      font-size: 1em;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background-color: #e0e0e0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonnenbank Flavour</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <h1>Swiss Super League – Spieltage</h1>
-
-  <select id="spieltagDropdown">
-    <option value="next">Nächster Spieltag</option>
-    <!-- Weitere Spieltage werden per JS eingefügt -->
-  </select>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Datum</th>
-        <th>Zeit</th>
-        <th>Heim</th>
-        <th>Auswärts</th>
-        <th>Stadion</th>
-      </tr>
-    </thead>
-    <tbody id="spieleTabelle"></tbody>
-  </table>
-
+  <div class="container">
+    <h1>Sonnenbank<br><span class="sub">Flavour</span></h1>
+    <img id="emoji" src="images/face0.png" alt="UV Emoji" />
+    <input type="range" min="0" max="5" value="0" id="uvSlider" />
+    <p id="uvIndexText">UV-Index: wird geladen...</p>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

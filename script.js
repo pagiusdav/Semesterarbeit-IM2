@@ -1,54 +1,43 @@
-const leagueId = 4405; // Swiss Super League ID in TheSportsDB
-const apiBase = 'https://www.thesportsdb.com/api/v1/json/3';
-const dropdown = document.getElementById('spieltagDropdown');
-const spieleTabelle = document.getElementById('spieleTabelle');
+const latitude = 46.853;
+const longitude = 9.530;
+const slider = document.getElementById('uvSlider');
+const emoji = document.getElementById('emoji');
+const uvText = document.getElementById('uvIndexText');
 
-// Hole alle Spieltage und befülle Dropdown
-fetch(`${apiBase}/eventsrounds.php?id=${leagueId}&s=2023-2024&r=1`)
-  .then(res => res.json())
-  .then(data => {
-    const rounds = data.rounds || [];
-    rounds.forEach(round => {
-      const option = document.createElement('option');
-      option.value = round;
-      option.textContent = round;
-      dropdown.appendChild(option);
-    });
-  });
+let uvValues = [];
 
-// Zeige standardmäßig den nächsten Spieltag
-zeigeSpiele('next');
+async function fetchUV() {
+  try {
+    const res = await fetch(`https://currentuvindex.com/api/v1/uvi?latitude=${latitude}&longitude=${longitude}`);
+    const data = await res.json();
 
-dropdown.addEventListener('change', () => {
-  const selected = dropdown.value;
-  zeigeSpiele(selected);
+    if (data.ok) {
+      uvValues = [data.now, ...data.forecast.slice(0, 5)];
+      updateUI(0);
+    } else {
+      uvText.textContent = 'Fehler beim Laden des UV-Index: ' + data.message;
+    }
+  } catch (error) {
+    uvText.textContent = 'Fehler beim Laden des UV-Index';
+    console.error(error);
+  }
+}
+
+function updateUI(index) {
+  const uvData = uvValues[index];
+  const uv = uvData.uvi;
+  uvText.textContent = `UV-Index: ${uv}`;
+
+  if (uv <= 2) emoji.src = 'images/face0.png';
+  else if (uv <= 5) emoji.src = 'images/face1.png';
+  else if (uv <= 7) emoji.src = 'images/face2.png';
+  else if (uv <= 10) emoji.src = 'images/face3.png';
+  else emoji.src = 'images/face4.png';
+}
+
+slider.addEventListener('input', (e) => {
+  const value = parseInt(e.target.value);
+  updateUI(value);
 });
 
-// Spiele anzeigen
-function zeigeSpiele(runde) {
-  spieleTabelle.innerHTML = '';
-  const url = runde === 'next'
-    ? `${apiBase}/eventsnextleague.php?id=${leagueId}`
-    : `${apiBase}/eventsround.php?id=${leagueId}&r=${encodeURIComponent(runde)}&s=2023-2024`;
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      const events = data.events || [];
-      events.forEach(event => {
-        const row = document.createElement('tr');
-        const date = new Date(event.dateEvent + 'T' + (event.strTime || '12:00:00'));
-        row.innerHTML = `
-          <td>${date.toLocaleDateString()}</td>
-          <td>${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</td>
-          <td>${event.strHomeTeam}</td>
-          <td>${event.strAwayTeam}</td>
-          <td>${event.strVenue || '-'}</td>
-        `;
-        spieleTabelle.appendChild(row);
-      });
-    })
-    .catch(err => {
-      console.error('Fehler beim Laden der Spiele:', err);
-    });
-}
+fetchUV();
