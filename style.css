@@ -50,8 +50,9 @@ body {
   #uvSlider {
     -webkit-appearance: none;
     width: 805px;
-    height: 75px;
-    border-radius: 50px;
+    height: 98px;
+    border: 10px solid black;
+    border-radius: 100px;
     background: #a5dff9; /* Hellblauer Standard-Hintergrund */
     background-image: linear-gradient(to right, #0077cc 0%, #0077cc 100%);
     background-repeat: no-repeat;
@@ -63,25 +64,25 @@ body {
   }
   
   /* Der Schiebeknopf */
-  #uvSlider::-webkit-slider-thumb {
+#uvSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 15px;
-    height: 100px;
-    border-radius: 12px;
+    width: 45px;
+    height: 178px;
+    border-radius: 50px;
     background: white;
-    border: 2px solid black;
+    border: 10px solid black;
     cursor: pointer;
     margin-top: 0px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   }
   
   #uvSlider::-moz-range-thumb {
-    width: 24px;
-    height: 40px;
-    border-radius: 12px;
+    width: 45px;
+    height: 178px;
+    border-radius: 50px;
     background: white;
-    border: 5px solid black;
+    border: 10px solid black;
     cursor: pointer;
   }
   
