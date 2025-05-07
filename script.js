@@ -33,6 +33,9 @@ function updateUI(index) {
   else if (uv <= 7) emoji.src = 'images/face2.png';
   else if (uv <= 10) emoji.src = 'images/face3.png';
   else emoji.src = 'images/face4.png';
+
+  const percent = (index / (uvValues.length - 1)) * 100;
+  slider.style.backgroundSize = `${percent}% 100%`;
 }
 
 slider.addEventListener('input', (e) => {
