@@ -20,7 +20,7 @@ body {
   }
 
   .Churshine {
-    position: absolute;
+    position: relative;
     top: 71px;
     left: 50%;
     transform: translateX(-50%);
@@ -40,7 +40,8 @@ body {
   }
   
   #emoji {
-    width: 900px;
+    width: auto;
+    height: 341px;
     margin: 30px auto;
     height: auto;
     display: block;
@@ -51,7 +52,7 @@ body {
   #uvSlider {
     -webkit-appearance: none;
     width: 805px;
-    height: 98px;
+    height: 65px;
     border: 10px solid black;
     border-radius: 100px;
     background: #a5dff9; /* Hellblauer Standard-Hintergrund */
@@ -68,8 +69,8 @@ body {
 #uvSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 45px;
-    height: 178px;
+    width: 40px;
+    height: 140px;
     border-radius: 50px;
     background: white;
     border: 10px solid black;
@@ -79,8 +80,8 @@ body {
   }
   
   #uvSlider::-moz-range-thumb {
-    width: 45px;
-    height: 178px;
+    width: 40px;
+    height: 140px;
     border-radius: 50px;
     background: white;
     border: 10px solid black;
