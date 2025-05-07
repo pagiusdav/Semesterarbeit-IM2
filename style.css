@@ -1,7 +1,8 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     margin: 0;
     font-family: 'Comic Sans MS', sans-serif;
     display: flex;
@@ -14,23 +15,20 @@ body {
     background-position: center;
   }
   
- .container {
+  .container {
     text-align: center;
-    /*background: none;
-    padding: 2rem;*/
-    /*border-radius: 1rem;*/
-    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
   }
 
   .Churshine {
-  position: absolute;
-  top: 71px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 805px;
-  height: 180px;
-  display: block;
-}
+    position: absolute;
+    top: 71px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 805px;
+    height: 180px;
+    display: block;
+    z-index: 1;
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -40,15 +38,13 @@ body {
     font-size: 1.2rem;
     font-weight: normal;
   }
-  */
+  
   #emoji {
-    width: 600px;
+    width: 900px;
     height: auto;
-    margin: 1rem 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: block;
+    position: relative;
+    object-fit: contain;
   }
   
   #uvSlider {
