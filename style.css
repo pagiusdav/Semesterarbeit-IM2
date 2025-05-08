@@ -53,15 +53,27 @@ body {
     height: 65px;
     border: 10px solid black;
     border-radius: 100px;
-    background: #a5dff9; /* Hellblauer Standard-Hintergrund */
-    background-image: linear-gradient(to right, #0077cc 0%, #0077cc 100%);
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;
     margin: 1rem 0;
-    transition: none;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+    background-image: 
+      url('images/sun.png'),                     /* Sonne links */
+      linear-gradient(to right, #0077cc 0%, #0077cc 0%),  /* Fortschrittsbalken */
+      url('images/moon.png');                    /* Mond rechts */
+  
+    background-repeat: no-repeat;
+    background-position: 
+      15px center,          /* Sonne ganz links */
+      left center,          /* Blaue Füllung */
+      calc(100% - 35px) center; /* Mond ganz rechts */
+  
+    background-size: 
+      35px 35px,    /* Sonne */
+      0% 100%,      /* Dynamischer Füllbalken */
+      35px 35px;    /* Mond */
   }
+  
   
   /* Der Schiebeknopf */
 #uvSlider::-webkit-slider-thumb {
@@ -86,27 +98,6 @@ body {
     cursor: pointer;
   }
   
-  /* Sonne und Mond als Symbole außen */
-  #uvSlider::before,
-  #uvSlider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background-size: cover;
-  }
-  
-  #uvSlider::before {
-    left: -30px;
-    background-image: url('images/sun.png'); /* Platzhalter: Sonne */
-  }
-  
-  #uvSlider::after {
-    right: -30px;
-    background-image: url('images/moon.png'); /* Platzhalter: Mond */
-  }
   
   #uvIndexText {
     font-size: 1.5rem;
