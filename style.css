@@ -69,9 +69,9 @@ body {
       calc(100% - 35px) center; /* Mond ganz rechts */
   
     background-size: 
-      35px 35px,    /* Sonne */
+      80px 80px,    /* Sonne */
       0% 100%,      /* Dynamischer Füllbalken */
-      35px 35px;    /* Mond */
+      80px 80px;    /* Mond */
   }
   
   
