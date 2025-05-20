@@ -1,5 +1,5 @@
-const latitude = -22;
-const longitude = -43;
+const latitude = 46.8508;
+const longitude = 9.5310;
 const slider = document.getElementById('uvSlider');
 const emoji = document.getElementById('emoji');
 const uvText = document.getElementById('uvIndexText');
