@@ -20,16 +20,15 @@ body {
   }
 
   .Churshine {
-    position: relative;
-    top: 71px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 805px;
-    height: 180px;
-    display: block;
-    z-index: 1;
-    margin-bottom: 15px;
-  }
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 805px;
+  height: auto;
+  display: block;
+  z-index: 1;
+}
+
 
   h1 {
     font-size: 2.5rem;
@@ -227,9 +226,6 @@ body {
     width: 150px;
   }
 
-  .container{
-    align-items: center;
-  }
   .uvBox {
     width: 60px;
     height: 100px;
@@ -246,9 +242,10 @@ body {
     font-size: 0.9rem;
   }
 
-  .Churshine {
+ .Churshine {
   width: 90vw;
   height: auto;
+  margin-bottom: 40px;
 }
 
   .text {
@@ -258,14 +255,17 @@ body {
   #uvSlider {
   width: 85vw;
   height: 50px;
+  display: block;
+  margin: 0 auto;
   background-size:
     20px 20px,      /* Sonne */
     20px 20px,      /* Mond */
-    0% 100%;
+    0% 50%;
   background-position: 
     10px center,
     calc(100% - 10px) center,
     left center;
+
 }
 
   .uvDisplay:hover #emoji {
