@@ -11,10 +11,21 @@
     <img class="Churshine" src="images/Schriftzug.png">
     <p class="text">let me tell you about the<br>
     UV-Index in Chur!</p>
+ <div class="uvDisplay">
+  <div class="uvInner">
     <img id="emoji" src="images/face0.png" alt="UV Emoji" />
+    <div class="uvBox" id="uvInfoBox">
+      <span id="uvLabel">UV-Index</span>
+      <span id="uvValue">--</span>
+      <span id="uvTime">--:--</span>
+      <span id="uvOrt">Chur</span>
+    </div>
+  </div>
+</div>
+
     <p class="text">Slide to see the UV index for the next hours!</p>
     <input type="range" min="0" max="5" value="0" id="uvSlider" />
-    <p id="uvIndexText">UV-Index: wird geladen...</p>
+
   </div>
   <script src="script.js"></script>
 </body>

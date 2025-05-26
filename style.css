@@ -109,3 +109,83 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
+
+.uvDisplay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.uvInner {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#emoji {
+  width: 290px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.uvBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(50px, -50%);
+  background-color: #0057b7;
+  padding: 25px 20px;
+  border-radius: 50px;
+  width: 140px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border: 10px solid #000000;
+}
+
+.uvBox span#uvValue {
+  font-size: 11rem;
+  font-weight: bold;
+  color: #ffee55;
+  line-height: 1;
+}
+
+.uvBox span#uvTime {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #b0d4f1;
+  margin-top: 5px;
+}
+
+.uvDisplay:hover #emoji {
+  transform: translateX(-150px); /* genau wie Box nach rechts */
+}
+
+.uvDisplay:hover .uvBox {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#uvLabel {
+  font-size: 1.2rem;
+  color: #ffee55;
+  margin-top: 0px;
+}
+
+#uvOrt {
+  font-size: 1rem;
+  color: #b0d4f1;
+  margin-top: 0px;
+}
+
+

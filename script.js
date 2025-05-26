@@ -12,7 +12,9 @@ async function fetchUV() {
     const data = await res.json();
 
     if (data.ok) {
-      uvValues = [data.now, ...data.forecast.slice(0, 5)];
+      const forecast = [data.now, ...data.forecast];
+      forecast.sort((a, b) => new Date(a.time) - new Date(b.time));
+      uvValues = forecast.slice(0, 6);
       updateUI(0);
     } else {
       uvText.textContent = 'Fehler beim Laden des UV-Index: ' + data.message;
@@ -26,7 +28,11 @@ async function fetchUV() {
 function updateUI(index) {
   const uvData = uvValues[index];
   const uv = uvData.uvi;
-  uvText.textContent = `UV-Index: ${uv}`;
+  document.getElementById("uvValue").textContent = uv;
+  const timeObj = new Date(uvData.time);
+  const hours = timeObj.getHours().toString().padStart(2, '0');
+  const timeStr = `${hours}:00`;
+  document.getElementById("uvTime").textContent = timeStr;
 
   if (uv <= 2) emoji.src = 'images/face0.png';
   else if (uv <= 5) emoji.src = 'images/face1.png';
