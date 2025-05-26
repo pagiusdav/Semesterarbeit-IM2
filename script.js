@@ -41,7 +41,7 @@ function updateUI(index) {
   else emoji.src = 'images/face4.png';
 
   const percent = (index / (uvValues.length - 1)) * 100;
-  slider.style.backgroundSize = `35px 35px, ${percent}% 100%, 35px 35px`;
+  slider.style.backgroundSize = `50px 50px, 50px 50px, ${percent}% 100%`;
 }
 
 slider.addEventListener('input', (e) => {
