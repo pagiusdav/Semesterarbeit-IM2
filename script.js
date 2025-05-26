@@ -28,7 +28,7 @@ async function fetchUV() {
 function updateUI(index) {
   const uvData = uvValues[index];
   const uv = uvData.uvi;
-  document.getElementById("uvValue").textContent = uv;
+  document.getElementById("uvValue").textContent = Math.round(uv);
   const timeObj = new Date(uvData.time);
   const hours = timeObj.getHours().toString().padStart(2, '0');
   const timeStr = `${hours}:00`;
