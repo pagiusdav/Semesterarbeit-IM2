@@ -28,6 +28,7 @@ body {
     height: 180px;
     display: block;
     z-index: 1;
+    margin-bottom: 15px;
   }
 
   h1 {
@@ -40,7 +41,7 @@ body {
   }
   
   #emoji {
-    margin: 30px auto;
+    margin: 15px auto;
     height: auto;
     display: block;
     position: relative;
@@ -104,4 +105,7 @@ body {
     font-weight: bold;
   }
 
-  
+.text {
+    font-size: 30px;
+    font-weight: bold;
+}
