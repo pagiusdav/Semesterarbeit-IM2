@@ -50,3 +50,23 @@ slider.addEventListener('input', (e) => {
 });
 
 fetchUV();
+
+// Touch/Click Toggle für UV-Box
+let uvVisible = false;
+
+emoji.addEventListener("click", () => {
+  uvVisible = !uvVisible;
+  const box = document.getElementById("uvInfoBox");
+
+  const shift = window.innerWidth < 600 ? -80 : -150;
+
+  if (uvVisible) {
+    emoji.style.transform = `translateX(${shift}px)`;
+    box.style.opacity = "1";
+    box.style.pointerEvents = "auto";
+  } else {
+    emoji.style.transform = "translateX(0)";
+    box.style.opacity = "0";
+    box.style.pointerEvents = "none";
+  }
+});
