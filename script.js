@@ -34,11 +34,11 @@ function updateUI(index) {
   const timeStr = `${hours}:00`;
   document.getElementById("uvTime").textContent = timeStr;
 
-  if (uv <= 2) emoji.src = 'images/face0.png';
-  else if (uv <= 5) emoji.src = 'images/face1.png';
-  else if (uv <= 7) emoji.src = 'images/face2.png';
-  else if (uv <= 10) emoji.src = 'images/face3.png';
-  else emoji.src = 'images/face4.png';
+  if (uv <= 2) emoji.src = 'images/face0.PNG';
+  else if (uv <= 5) emoji.src = 'images/face1.PNG';
+  else if (uv <= 7) emoji.src = 'images/face2.PNG';
+  else if (uv <= 10) emoji.src = 'images/face3.PNG';
+  else emoji.src = 'images/face4.PNG';
 
   const percent = (index / (uvValues.length - 1)) * 100;
   slider.style.backgroundSize = `50px 50px, 50px 50px, ${percent}% 100%`;
@@ -51,22 +51,24 @@ slider.addEventListener('input', (e) => {
 
 fetchUV();
 
-// Touch/Click Toggle für UV-Box
+// Touch/Click Toggle nur für Geräte ohne Hover (z. B. Smartphones)
 let uvVisible = false;
 
-emoji.addEventListener("click", () => {
-  uvVisible = !uvVisible;
-  const box = document.getElementById("uvInfoBox");
+if (window.matchMedia("(hover: none)").matches) {
+  emoji.addEventListener("click", () => {
+    uvVisible = !uvVisible;
+    const box = document.getElementById("uvInfoBox");
 
-  const shift = window.innerWidth < 600 ? -80 : -150;
+    const shift = window.innerWidth < 600 ? -80 : -150;
 
-  if (uvVisible) {
-    emoji.style.transform = `translateX(${shift}px)`;
-    box.style.opacity = "1";
-    box.style.pointerEvents = "auto";
-  } else {
-    emoji.style.transform = "translateX(0)";
-    box.style.opacity = "0";
-    box.style.pointerEvents = "none";
-  }
-});
+    if (uvVisible) {
+      emoji.style.transform = `translateX(${shift}px)`;
+      box.style.opacity = "1";
+      box.style.pointerEvents = "auto";
+    } else {
+      emoji.style.transform = "translateX(0)";
+      box.style.opacity = "0";
+      box.style.pointerEvents = "none";
+    }
+  });
+}
