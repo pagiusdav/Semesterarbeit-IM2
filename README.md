@@ -4,10 +4,13 @@
 „Churshine“ ist eine interaktive Web-App, die den UV-Index für Chur visuell und spielerisch darstellt. Nutzer:innen können per Schieberegler die UV-Werte der nächsten Stunden abrufen. Ein Emoji reagiert dynamisch auf die Intensität der UV-Strahlung, und per Hover oder Klick erscheint eine Info-Box mit Uhrzeit und UV-Wert. Das Design ist responsiv, funktioniert auf allen Geräten und kombiniert Funktionalität mit humorvollem Look.
 
 ## Learnings und Schwierigkeiten von Leo:
-Hauptsächlich habe ich gelernt wie genau das CSS, HTML und Javascript miteinander funktionnieren. Schwierigkeiten lagen darin den Slider so zu machen wie ich ihn mir im Figma vorgestellt habe.
+Hauptsächlich habe ich gelernt wie genau das CSS, HTML und Javascript miteinander funktionieren. Schwierigkeiten lagen darin den Slider so zu machen wie ich ihn mir im Figma vorgestellt habe.
+
+## Learnings und Schwierigkeiten von Davide:
+Am schwierigsten für mich war die responsive Darstellung. Nach dem die Desktop-Ansicht stand brauchte es viele Versuche, bis alles mobil funktionierte. Ich habe dabei gelernt, wie hilfreich KI bei der Fehlersuche sein kann.
 
 ## Benutzte Ressourcen: 
-Copilot, ChatGPT, Youtube-Videos
+Copilot, ChatGPT, Youtube-Videos, Reddit
 
 ## gut gelungene Prompts:
 "Ich möchte die Icons immernoch grösser haben, wie kann ich damit rumprobieren?"
