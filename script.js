@@ -1,9 +1,10 @@
 const latitude = 46.8508;
 const longitude = 9.5310;
-const slider = document.getElementById('uvSlider');
+const slider = document.getElementById('uv-slider');
 const emoji = document.getElementById('emoji');
-const uvText = document.getElementById('uvIndexText');
-
+const uvText = document.getElementById('uv-text');
+const uvValue = document.getElementById("uv-value");
+const uvTime = document.getElementById("uv-time");
 let uvValues = [];
 
 async function fetchUV() {
@@ -28,11 +29,11 @@ async function fetchUV() {
 function updateUI(index) {
   const uvData = uvValues[index];
   const uv = uvData.uvi;
-  document.getElementById("uvValue").textContent = Math.round(uv);
+  uvValue.textContent = Math.round(uv);
   const timeObj = new Date(uvData.time);
   const hours = timeObj.getHours().toString().padStart(2, '0');
   const timeStr = `${hours}:00`;
-  document.getElementById("uvTime").textContent = timeStr;
+  uvTime.textContent = timeStr;
 
   if (uv <= 2) emoji.src = 'images/face0.PNG';
   else if (uv <= 5) emoji.src = 'images/face1.PNG';

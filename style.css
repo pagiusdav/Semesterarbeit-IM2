@@ -1,26 +1,27 @@
 /* Body und Webseitenlayout */
 body {
-    margin: 0;
-    font-family: 'Comic Sans MS', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("images/Background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+  margin: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("images/Background.png");
+  background-color: #ababab;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* Churshine Logo */
-.Churshine {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* churshine Logo */
+.churshine {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -33,31 +34,31 @@ body {
 
 /* Text über über und unter dem Emoji */
 .text {
-    margin-top: 0px;
-    font-size: 30px;
-    font-weight: bold;
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /* Emoji und UV-Index Box Anzeige */
 #emoji {
-    margin: 15px auto;
-    height: auto;
-    width: 290px;
-    display: block;
-    position: relative;
-    object-fit: contain;
-    transition: transform 0.3s ease-out;
-    z-index: 2;
+  margin: 15px auto;
+  height: auto;
+  width: 290px;
+  display: block;
+  position: relative;
+  object-fit: contain;
+  transition: transform 0.3s ease-out;
+  z-index: 2;
 }
-  
-.uvDisplay {
+
+.uv-display {
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
 }
 
-.uvInner {
+.uv-inner {
   position: relative;
   width: fit-content;
   display: flex;
@@ -65,7 +66,7 @@ body {
   align-items: center;
 }
 
-.uvBox {
+.uv-box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -83,49 +84,52 @@ body {
   transition: all 0.3s ease-out;
   text-align: center;
   box-shadow:
-    inset 10px 0 6px -2px rgba(0, 0, 0, 0.2),      /* seitlicher Schatten */
-    inset 0 -10px 12px -5px rgba(0, 0, 0, 0.4);    /* unterer Schatten */
+    inset 10px 0 6px -2px rgba(0, 0, 0, 0.2),
+    /* seitlicher Schatten */
+    inset 0 -10px 12px -5px rgba(0, 0, 0, 0.4);
+    /* unterer Schatten */
   z-index: 1;
   border: 8px solid #000000;
 }
 
-.uvBox span#uvValue {
+.uv-box span#uv-value {
   font-size: 10.5rem;
   font-weight: bold;
   color: #ffee55;
   line-height: 1;
 }
 
-.uvBox span#uvTime {
+.uv-box span#uv-time {
   font-size: 1.2rem;
   font-weight: bold;
   color: #b0d4f1;
   margin-top: 5px;
 }
 
-.uvDisplay:hover #emoji {
-  transform: translateX(-150px); /* genau wie Box nach rechts */
+.uv-display:hover #emoji {
+  transform: translateX(-150px);
+  /* genau wie Box nach rechts */
 }
 
-.uvDisplay:hover .uvBox {
+.uv-display:hover .uv-box {
   opacity: 1;
   pointer-events: auto;
 }
 
-#uvLabel {
+#uv-label {
   font-size: 1.2rem;
   color: #ffee55;
   margin-top: 0px;
 }
 
-#uvOrt {
+#uv-ort {
   font-size: 1rem;
   color: #b0d4f1;
   margin-top: 0px;
 }
 
 /*Schieberegler für die Stundenanzeige */
-#uvSlider {
+#uv-slider {
   -webkit-appearance: none;
   width: 90vw;
   max-width: 805px;
@@ -135,39 +139,42 @@ body {
   position: relative;
   margin: 1rem 0;
   box-shadow: inset 0 -10px 10px -5px rgba(0, 0, 0, 0.4);
-  background-image: 
+  background-image:
     url('images/sun.png'),
     url('images/moon.png'),
     linear-gradient(to right, #1275BB 0%, #1275BB 0%);
   background-repeat: no-repeat;
-  background-position: 
-  15px center,              /* Sonne */
-  calc(100% - 15px) center, /* Mond weiter nach rechts */
-  left center;
+  background-position:
+    15px center,
+    /* Sonne */
+    calc(100% - 15px) center,
+    /* Mond weiter nach rechts */
+    left center;
 }
+
 /* Schiebeknopffunktion für verschiedene Browser*/
-  #uvSlider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 40px;
-      height: 140px;
-      border-radius: 50px;
-      background: #77B9E4;
-      border: 8px solid black;
-      cursor: pointer;
-      margin-top: 0px;
-      box-shadow:inset 10px 0 6px -2px rgba(0, 0, 0, 0.2);
-  }
-    
-  #uvSlider::-moz-range-thumb {
-      width: 40px;
-      height: 140px;
-      border-radius: 50px;
-      background: #77B9E4;
-      border: 8px solid black;
-      cursor: pointer;
-      box-shadow:inset 10px 0 6px -2px rgba(0, 0, 0, 0.2);
-  }
+#uv-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 140px;
+  border-radius: 50px;
+  background: #77B9E4;
+  border: 8px solid black;
+  cursor: pointer;
+  margin-top: 0px;
+  box-shadow: inset 10px 0 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+#uv-slider::-moz-range-thumb {
+  width: 40px;
+  height: 140px;
+  border-radius: 50px;
+  background: #77B9E4;
+  border: 8px solid black;
+  cursor: pointer;
+  box-shadow: inset 10px 0 6px -2px rgba(0, 0, 0, 0.2);
+}
 
 /* Responsive Design */
 /* Tablet */
@@ -176,22 +183,22 @@ body {
     width: 200px;
   }
 
-  .uvBox {
+  .uv-box {
     width: 110px;
     height: 180px;
     border-radius: 40px;
   }
 
-  .uvBox span#uvValue {
+  .uv-box span#uv-value {
     font-size: 7rem;
   }
 
-  #uvSlider {
+  #uv-slider {
     width: 90vw;
     height: 60px;
   }
 
-  .Churshine {
+  .churshine {
     width: 90vw;
     height: auto;
   }
@@ -207,55 +214,57 @@ body {
     width: 150px;
   }
 
-  .uvBox {
+  .uv-box {
     width: 60px;
     height: 120px;
     border-radius: 30px;
     transform: translate(30px, -50%);
   }
 
-  .uvBox span#uvValue {
+  .uv-box span#uv-value {
     font-size: 4rem;
   }
 
-  .uvBox span#uvTime,
-  #uvLabel, #uvOrt {
+  .uv-box span#uv-time,
+  #uv-label,
+  #uv-ort {
     font-size: 0.7rem;
   }
 
- .Churshine {
-  width: 90vw;
-  height: auto;
-}
+  .churshine {
+    width: 90vw;
+    height: auto;
+  }
 
   .text {
     font-size: 20px;
   }
 
-  #uvSlider {
-  width: 85vw;
-  height: 50px;
-  display: block;
-  margin: 0 auto;
-  padding: 2px 0px 2px 0px;
-}
+  #uv-slider {
+    width: 85vw;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    padding: 2px 0px 2px 0px;
+  }
 
-  #uvSlider::-webkit-slider-thumb {
+  #uv-slider::-webkit-slider-thumb {
     width: 30px;
     height: 100px;
   }
-  
-  #uvSlider::-moz-range-thumb {
+
+  #uv-slider::-moz-range-thumb {
     width: 30px;
     height: 100px;
     border-radius: 50px;
     background: #77B9E4;
     border: 8px solid black;
     cursor: pointer;
-    box-shadow:inset 10px 0 6px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 10px 0 6px -2px rgba(0, 0, 0, 0.2);
   }
 
-  .uvDisplay:hover #emoji {
-    transform: translateX(-100px); /* kleinerer Shift für kleinere Screens */
+  .uv-display:hover #emoji {
+    transform: translateX(-100px);
+    /* kleinerer Shift für kleinere Screens */
   }
 }
